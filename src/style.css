@@ -162,11 +162,18 @@ html, body {
 }
 
 .course {
-    /* transition: all 0.2s ease-in-out; */
+    transition: all 0.2s ease-in-out;
     @apply flex flex-col gap-2 justify-center items-center text-center bg-[var(--secondary)] rounded-2xl p-3 text-gray-200 max-w-33;
 }
 
-/* .course:hover {
-    box-shadow: 0 0 5px 3px rgba(255, 255, 190, 0.75);
+.course:hover {
+    /* box-shadow: 0 0 5px 3px rgba(255, 255, 190, 0.75); */
     transform: scale(1.1);
+}
+
+/* .connect {
+    @apply w-10 h-1 border-none bg-[var(--secondary)];
+    @media screen and (max-width: 1100px) {
+        display: none;
+    }
 } */
