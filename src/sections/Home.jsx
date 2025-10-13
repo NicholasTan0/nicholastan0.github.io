@@ -5,10 +5,14 @@ const Home = () => {
                 <hr className="grows h-1.5 mb-12 mt-8 bg-gray-200"></hr>
                 <h2 className="text-lg font-mono">Hi, my name is</h2>
                 <h1 className="max-w-fit typing text-responsive font-bold">Nicholas Tan.</h1>
+                <div className="flex items-center gap-1">
+                    <svg width="1rem" height="1rem" viewBox="-3 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><defs> </defs> <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-223.000000, -5439.000000)" className="fill-neutral-400"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M176,5286.219 C176,5287.324 175.105,5288.219 174,5288.219 C172.895,5288.219 172,5287.324 172,5286.219 C172,5285.114 172.895,5284.219 174,5284.219 C175.105,5284.219 176,5285.114 176,5286.219 M174,5296 C174,5296 169,5289 169,5286 C169,5283.243 171.243,5281 174,5281 C176.757,5281 179,5283.243 179,5286 C179,5289 174,5296 174,5296 M174,5279 C170.134,5279 167,5282.134 167,5286 C167,5289.866 174,5299 174,5299 C174,5299 181,5289.866 181,5286 C181,5282.134 177.866,5279 174,5279" id="pin_sharp_circle-[#624]"> </path> </g> </g> </g> </g></svg>
+                    <span className="text-neutral-400 text-sm">New York City, United States</span>
+                </div>
             </div>
             <div className="appearFirst flex flex-2/5 flex-col justify-center my-8">
                 <h2 className="text-lg text-white">About Me</h2>
-                <p className="text-[#ddd] pt-2 pb-4">I am a fourth year student studying Computer Science at Stony Brook University. I am passionate about full-stack development, game development, artificial intelligence, and UI/UX design.</p>
+                <p className="text-[#ddd] pt-2 pb-4">I am a fourth year student studying Computer Science at Stony Brook University. Aspiring full-stack developer with experience in game development, artificial intelligence, and UI/UX design.</p>
                 <a href="#about" className="flex items-center border-b-2 w-max text-white">Learn More
                     <svg width="32px" height="32px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="white"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path> </g></svg>
                 </a>

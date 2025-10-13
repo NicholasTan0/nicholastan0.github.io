@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 :root {
     --primary: hsl(213, 14%, 12%);
     --secondary: hsl(219, 17%, 20%);
@@ -42,6 +48,11 @@ html, body {
     font-family: "Inter", sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+#home, #about, #portfolio, #skills {
+    scroll-snap-align: start;
 }
 
 .bg-primary{
@@ -141,10 +152,10 @@ html, body {
 }
 
 @media screen and (max-width: 400px) { 
-    img { display: none; } 
+    #portfolio img { display: none; } 
 }
 
-#about {
+#skills, #experience {
     background-size: 30px 30px;
     background-image: linear-gradient(to right, rgba(128,128,128,8%) 1px, transparent 1px), linear-gradient(to bottom, rgba(128,128,128,8%) 1px, transparent 1px);
 }
@@ -157,23 +168,109 @@ html, body {
 
 .skill:hover {
     /* z-index: 1; */
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 0 0 7px 7px rgba(255, 255, 190, 0.75);
 }
 
 .course {
-    transition: all 0.2s ease-in-out;
-    @apply flex flex-col gap-2 justify-center items-center text-center bg-[var(--secondary)] rounded-2xl p-3 text-gray-200 max-w-33;
+    /* transition: all 0.2s ease-in-out; */
+    @apply flex flex-col gap-2.5 justify-center items-center text-center bg-[var(--secondary)] rounded-2xl p-3 text-gray-200 max-w-33 relative;
 }
 
-.course:hover {
-    /* box-shadow: 0 0 5px 3px rgba(255, 255, 190, 0.75); */
-    transform: scale(1.1);
+.course::before, .course::after{
+    content: "";
+    position: absolute;
+    inset: -0.1rem;
+    z-index: -1;
+    /* background: conic-gradient(
+        from var(--gradient-angle),
+        red,
+        goldenrod,
+        red
+    ); */
+    border-radius: inherit;
+    animation: rotation 2s linear infinite;
 }
 
-/* .connect {
-    @apply w-10 h-1 border-none bg-[var(--secondary)];
-    @media screen and (max-width: 1100px) {
+.course::after{
+    filter: blur(0.5rem);
+}
+
+@keyframes rotation {
+    0% { --gradient-angle: 0deg; }
+    100% { --gradient-angle: 360deg; }
+}
+
+.sticky-header {
+    position: fixed;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 4px;
+    height: 50px;
+    background: rgba(26, 30, 35, 0.2);
+    border: 2px solid rgba(42, 48, 60, 0.2);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s ease;
+    z-index: 999;
+}
+
+.sticky-header.visible {
+  top: 0;
+}
+
+@media screen and (max-width: 600px){
+    .sticky-header.visible {
         display: none;
     }
-} */
+}
+
+#about img{
+    object-fit: cover;
+    object-position: bottom;
+    width: 100%;
+    max-width: 40%;
+    max-height: 400px;
+    outline: 3px solid var(--secondary);
+    pointer-events: none;
+}
+
+.about div{
+    font-size: max(1.8vw, 20px);
+}
+
+@media screen and (max-width: 800px) { 
+    .about {
+        flex-direction: column;
+    }
+    .about div{
+        @apply text-center
+    }
+    #about img {
+        max-width: 100%;
+    }
+}
+
+#experience img{
+    aspect-ratio: 1/1;
+    border-radius: calc(infinity * 1px);
+    width: 64px;
+    cursor: pointer;
+}
+
+.experience{
+    @apply flex self-start items-center text-gray-200 gap-3 bg-[var(--secondary)] p-4 rounded-4xl w-full
+}
+
+.experience:hover{
+    box-shadow: 0 0 7px 7px rgba(255, 255, 255, 0.6);
+}
+
+.experience ul{
+    list-style-type: circle;
+}
